@@ -16,12 +16,12 @@
 		var name = Name.toLowerCase();
 		var document = window.document;
 		var documentElement = document.documentElement;
-		if (window["inner" + Name] === undefined) {
+		if (window["inner" + Name] === undefined) {        //window returns window.innerWidth and window.innerHeight
 			// IE6 & IE7 don't have window.innerWidth or innerHeight
-			size = documentElement["client" + Name];
+			size = documentElement["client" + Name];   //documentElement return documentElement.clientWidth and clientHeight
 		}
 		else if (window["inner" + Name] != documentElement["client" + Name]) {
-			// WebKit doesn't include scrollbars while calculating viewport size so we have to get fancy
+			// WebKit(chrome/safari) doesn't include scrollbars while calculating viewport size so we have to get fancy
 
 			// Insert markup to test if a media query will match document.doumentElement["client" + Name]
 			var bodyElement = document.createElement("body");
